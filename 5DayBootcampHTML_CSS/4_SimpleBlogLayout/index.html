@@ -1,0 +1,77 @@
+<!--Simple Blog Layout 
+o Homepage showing at least 4 blog posts. Each post uses <article> 
+containing an <img> thumbnail, <h2> title, <p> metadata (author and date), 
+and short excerpt. 
+o Articles must be arranged in 2 columns on desktop using Grid; stack to 1 
+column on screens <768px. 
+o Sidebar <aside> listing blog categories inside <ul>. 
+o Footer with navigation links for “Previous” and “Next.” 
+o Ensure article titles are linked using <a> to a placeholder URL.-->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Blog</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>My Blog</h1>
+  </header>
+
+  <main class="container">
+    <!-- Blog Posts -->
+    <section class="posts">
+      <article>
+        <img src="post1.jpg" alt="Post 1 Thumbnail">
+        <h2><a href="#">The Future of AI</a></h2>
+        <p class="meta">By Navya | Sep 12, 2025</p>
+        <p>Artificial Intelligence is transforming industries with innovations in healthcare, finance, and more...</p>
+      </article>
+
+      <article>
+        <img src="post2.jpg" alt="Post 2 Thumbnail">
+        <h2><a href="#">Web Development Trends</a></h2>
+        <p class="meta">By Rohan | Sep 10, 2025</p>
+        <p>From frameworks to design patterns, discover what’s shaping the next generation of web apps...</p>
+      </article>
+
+      <article>
+        <img src="post3.jpg" alt="Post 3 Thumbnail">
+        <h2><a href="#">Cybersecurity Essentials</a></h2>
+        <p class="meta">By Neha | Sep 8, 2025</p>
+        <p>Protecting your data has never been more critical—here are the basics you should know...</p>
+      </article>
+
+      <article>
+        <img src="post4.jpg" alt="Post 4 Thumbnail">
+        <h2><a href="#">Cloud Computing Explained</a></h2>
+        <p class="meta">By Alex | Sep 5, 2025</p>
+        <p>Cloud services power the modern web—this guide breaks down how it all works...</p>
+      </article>
+    </section>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Categories</h3>
+      <ul>
+        <li><a href="#">AI & ML</a></li>
+        <li><a href="#">Web Development</a></li>
+        <li><a href="#">Cybersecurity</a></li>
+        <li><a href="#">Cloud Computing</a></li>
+      </ul>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <nav>
+      <a href="#">&laquo; Previous</a>
+      <a href="#">Next &raquo;</a>
+    </nav>
+  </footer>
+
+</body>
+</html>

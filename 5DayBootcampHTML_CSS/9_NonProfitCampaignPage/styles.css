@@ -1,0 +1,102 @@
+/* Reset some default spacing for consistency */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #4CAF50; /* Green background to make slogan stand out */
+  color: white;
+  text-align: center;
+  padding: 60px 20px; /* Space around text */
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+/* Impact Section */
+.impact {
+  padding: 40px 20px;
+  background: #f9f9f9;
+}
+
+.impact h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.impact ul {
+  list-style: none; /* Remove default bullets */
+  counter-reset: stat-counter; /* Initialize counter */
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.impact li {
+  counter-increment: stat-counter; /* Increase counter by 1 */
+  margin: 10px 0;
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.impact li::before {
+  content: counter(stat-counter) ". "; /* Display counter number */
+  font-weight: bold;
+  color: #4CAF50;
+  margin-right: 10px;
+}
+
+/* Donation Tiers */
+.donation-tiers {
+  display: flex;
+  flex-wrap: wrap; /* Wrap on smaller screens */
+  gap: 20px; /* Equal spacing between cards */
+  padding: 40px 20px;
+  justify-content: center;
+}
+
+.tier-card {
+  flex: 1 1 200px; /* Flexible cards, min 200px wide */
+  max-width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+}
+
+.tier-card h3 {
+  margin-top: 0;
+  color: #4CAF50;
+}
+
+.price {
+  display: inline-block;
+  margin: 15px 0;
+  padding: 10px 20px;
+  background: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  font-size: 1.2rem;
+}
+
+.donate-btn {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #ff5722; /* Bright orange for visibility */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.donate-btn:hover {
+  background: #e64a19; /* Slightly darker on hover */
+}

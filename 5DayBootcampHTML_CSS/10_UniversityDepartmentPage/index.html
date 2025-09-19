@@ -1,0 +1,94 @@
+<!--10. University Department Page 
+ Breadcrumb <nav aria-label="breadcrumb"> with ordered list showing path 
+(Home > Departments > Computer Science). 
+ Academic programs section listing at least 3 programs. Each program uses 
+<article> with <h3> title and <p> description. 
+ Utility nav at top with links: Student Login, Library, Contact. 
+ Footer must have 3 columns: Admissions, Faculty, Contact info. 
+ Page must be fully responsive: 3 columns desktop, stacked on mobile.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computer Science Department</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Utility Nav -->
+  <nav class="utility-nav">
+    <ul>
+      <li><a href="#">Student Login</a></li>
+      <li><a href="#">Library</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Breadcrumb Nav -->
+  <nav aria-label="breadcrumb" class="breadcrumb">
+    <ol>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Departments</a></li>
+      <li>Computer Science</li>
+    </ol>
+  </nav>
+
+  <!-- Department Header -->
+  <header class="dept-header">
+    <h1>Department of Computer Science</h1>
+    <p>Empowering students with innovation, research, and technology.</p>
+  </header>
+
+  <!-- Academic Programs Section -->
+  <main>
+    <section class="programs">
+      <h2>Academic Programs</h2>
+
+      <article>
+        <h3>Bachelor of Science in Computer Science</h3>
+        <p>A four-year undergraduate program focusing on programming, algorithms, and software development.</p>
+      </article>
+
+      <article>
+        <h3>Master of Science in Artificial Intelligence</h3>
+        <p>Advanced coursework and research opportunities in AI, machine learning, and data science.</p>
+      </article>
+
+      <article>
+        <h3>Ph.D. in Computer Science</h3>
+        <p>A research-driven doctoral program designed to foster innovation and scientific contributions in computing.</p>
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Admissions</h4>
+        <ul>
+          <li><a href="#">Undergraduate</a></li>
+          <li><a href="#">Graduate</a></li>
+          <li><a href="#">Scholarships</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Faculty</h4>
+        <ul>
+          <li><a href="#">Professors</a></li>
+          <li><a href="#">Research</a></li>
+          <li><a href="#">Publications</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: csdept@university.edu</p>
+        <p>Phone: +1 (123) 456-7890</p>
+        <p>Address: 123 University Ave, City</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

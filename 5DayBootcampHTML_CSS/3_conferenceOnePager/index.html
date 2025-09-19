@@ -1,0 +1,84 @@
+<!--Conference One-Pager 
+o <header> with event title in <h1> and date in <p>. 
+o Agenda section with CSS Grid: left column for time, right column for 
+session name. Minimum 5 sessions. 
+o Speakers section: a Grid of cards (2–3 columns) with equal card heights. 
+Each card: speaker <img> (circular with border-radius: 50%), <h3> name, 
+<p> bio. 
+o Venue section: include <address> tag with location, and a placeholder 
+<div> for map. 
+o Add a visually hidden “Skip to main content” link at the top (.skip-link). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conference One-Pager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Skip to main content -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header>
+    <h1>Tech Future Conference 2025</h1>
+    <p>September 25, 2025 | Hyderabad, India</p>
+  </header>
+
+  <main id="main">
+
+    <!-- Agenda -->
+    <section class="agenda">
+      <h2>Agenda</h2>
+      <div class="agenda-grid">
+        <div class="time">09:00 AM</div>
+        <div class="session">Opening Keynote</div>
+        <div class="time">10:30 AM</div>
+        <div class="session">AI in Healthcare</div>
+        <div class="time">12:00 PM</div>
+        <div class="session">Networking Lunch</div>
+        <div class="time">01:30 PM</div>
+        <div class="session">Future of Web Development</div>
+        <div class="time">03:00 PM</div>
+        <div class="session">Cybersecurity Trends</div>
+      </div>
+    </section>
+
+    <!-- Speakers -->
+    <section class="speakers">
+      <h2>Speakers</h2>
+      <div class="speakers-grid">
+        <div class="card">
+          <img src="speaker1.jpg" alt="Speaker 1">
+          <h3>Dr. Ananya Rao</h3>
+          <p>Expert in Artificial Intelligence and healthcare innovation.</p>
+        </div>
+        <div class="card">
+          <img src="speaker2.jpg" alt="Speaker 2">
+          <h3>Mr. Rohan Verma</h3>
+          <p>Web technology pioneer and CTO of TechLabs.</p>
+        </div>
+        <div class="card">
+          <img src="speaker3.jpg" alt="Speaker 3">
+          <h3>Ms. Neha Gupta</h3>
+          <p>Cybersecurity researcher and consultant.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Venue -->
+    <section class="venue">
+      <h2>Venue</h2>
+      <address>
+        Hyderabad International Convention Centre <br>
+        123 Tech Park Road, Hyderabad, India
+      </address>
+      <div class="map-placeholder">[ Map Placeholder ]</div>
+    </section>
+
+  </main>
+
+</body>
+</html>

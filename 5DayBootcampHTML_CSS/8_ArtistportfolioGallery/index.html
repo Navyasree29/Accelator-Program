@@ -1,0 +1,55 @@
+<!--Artist Portfolio Gallery 
+o Header with artist name in <h1>. 
+o Filter bar using <nav> containing category buttons styled as toggle chips 
+(Painting, Photography, Digital). Each button uses aria-pressed for 
+accessibility. 
+o Gallery with CSS Grid (3–4 columns) where each item is a <figure> 
+containing <img> and <figcaption>. 
+o Images must maintain consistent aspect ratio using CSS aspect-ratio. 
+o On mobile, gallery must show 1 column. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artist Portfolio Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header with artist name -->
+  <header>
+    <h1>Artist Portfolio</h1>
+  </header>
+
+  <!-- Filter bar with category buttons -->
+  <nav class="filter-bar">
+    <button aria-pressed="false">Painting</button>
+    <button aria-pressed="false">Photography</button>
+    <button aria-pressed="false">Digital</button>
+  </nav>
+
+  <!-- Gallery with CSS Grid -->
+  <main class="gallery">
+    <figure>
+      <img src="https://via.placeholder.com/300x200" alt="Artwork 1">
+      <figcaption>Artwork 1</figcaption>
+    </figure>
+    <figure>
+      <img src="https://via.placeholder.com/300x200" alt="Artwork 2">
+      <figcaption>Artwork 2</figcaption>
+    </figure>
+    <figure>
+      <img src="https://via.placeholder.com/300x200" alt="Artwork 3">
+      <figcaption>Artwork 3</figcaption>
+    </figure>
+    <figure>
+      <img src="https://via.placeholder.com/300x200" alt="Artwork 4">
+      <figcaption>Artwork 4</figcaption>
+    </figure>
+    <figure>
+      <img src="https://via.placeholder.com/300x200" alt="Artwork 5">
+      <figcaption>Artwork 5</figcaption>
+    </figure>
+  </main>
+</body>
+</html>

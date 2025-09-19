@@ -1,0 +1,92 @@
+<!-- Product Feature Page 
+o <main> includes <section> for specifications using <dl> with terms (<dt>) 
+and details (<dd>). 
+o A <table> with caption “Product Comparison” showing 3 models 
+(columns) vs features (rows). Apply zebra striping on rows and highlight 
+“Recommended” column with different background. 
+o Table headers must use <th scope="col"> and <th scope="row"> for 
+accessibility. 
+o At least 5 comparison features included.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Features</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <main>
+    <!-- Specifications Section -->
+    <section>
+      <h2>Specifications</h2>
+      <dl>
+        <dt>Display</dt>
+        <dd>6.5-inch AMOLED, 120Hz refresh rate</dd>
+
+        <dt>Processor</dt>
+        <dd>Octa-core 3.0 GHz with AI engine</dd>
+
+        <dt>Battery</dt>
+        <dd>5000mAh, fast charging supported</dd>
+
+        <dt>Camera</dt>
+        <dd>108MP rear + 32MP front</dd>
+
+        <dt>Operating System</dt>
+        <dd>Android 14 with custom UI</dd>
+      </dl>
+    </section>
+
+    <!-- Product Comparison Table -->
+    <section>
+      <h2>Compare Models</h2>
+      <table>
+        <caption>Product Comparison</caption>
+        <thead>
+          <tr>
+            <th scope="col">Features</th>
+            <th scope="col">Model A</th>
+            <th scope="col" class="recommended">Model B (Recommended)</th>
+            <th scope="col">Model C</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Display</th>
+            <td>6.1" LCD</td>
+            <td class="recommended">6.5" AMOLED</td>
+            <td>6.7" OLED</td>
+          </tr>
+          <tr>
+            <th scope="row">Processor</th>
+            <td>Quad-core 2.0 GHz</td>
+            <td class="recommended">Octa-core 3.0 GHz</td>
+            <td>Octa-core 2.8 GHz</td>
+          </tr>
+          <tr>
+            <th scope="row">Battery</th>
+            <td>4000mAh</td>
+            <td class="recommended">5000mAh</td>
+            <td>4500mAh</td>
+          </tr>
+          <tr>
+            <th scope="row">Camera</th>
+            <td>48MP + 16MP</td>
+            <td class="recommended">108MP + 32MP</td>
+            <td>64MP + 20MP</td>
+          </tr>
+          <tr>
+            <th scope="row">Price</th>
+            <td>$499</td>
+            <td class="recommended">$699</td>
+            <td>$799</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+</body>
+</html>

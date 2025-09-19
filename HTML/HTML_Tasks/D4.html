@@ -1,0 +1,116 @@
+<!-- Exercise 1: Registration Form – Create a form with Name, Password, Email, Gender (radio), Skills (checkboxes), Country (dropdown), and a Submit button. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="pwd">Password:</label>
+        <input type="password" id="pwd" name="pwd"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br><br>
+
+        <p>Gender:</p>
+        <input type="radio" id="male" name="gender" value="Male"> Male
+        <input type="radio" id="female" name="gender" value="Female"> Female
+        <input type="radio" id="other" name="gender" value="Other"> Other <br><br>
+
+        <p>Skills:</p>
+        <input type="checkbox" name="skills" value="HTML"> HTML
+        <input type="checkbox" name="skills" value="CSS"> CSS
+        <input type="checkbox" name="skills" value="JavaScript"> JavaScript <br><br>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+            <option value="uk">UK</option>
+            <option value="australia">Australia</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
+
+<!-- Exercise 2: Blog Layout – Create a page with a header, nav, section (with 2 articles), aside, and footer. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Blog Layout</title>
+</head>
+<body>
+    <header>
+        <h1>My Blog</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a> |
+        <a href="#">About</a> |
+        <a href="#">Contact</a>
+    </nav>
+
+    <section>
+        <article>
+            <h2>Article 1</h2>
+            <p>This is the first article content of the blog.</p>
+        </article>
+
+        <article>
+            <h2>Article 2</h2>
+            <p>This is the second article content of the blog.</p>
+        </article>
+    </section>
+
+    <aside>
+        <h3>Related Links</h3>
+        <ul>
+            <li><a href="#">HTML Tutorial</a></li>
+            <li><a href="#">CSS Basics</a></li>
+            <li><a href="#">JavaScript Guide</a></li>
+        </ul>
+    </aside>
+
+    <footer>
+        <p>© 2025 My Blog. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+<!-- Exercise 3: Contact Page – Create a contact form inside a section, with a footer at the bottom. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Page</title>
+</head>
+<body>
+    <h1>Contact Us</h1>
+
+    <section>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" cols="40"></textarea><br><br>
+
+            <input type="submit" value="Send">
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Contact Page</p>
+    </footer>
+</body>
+</html>

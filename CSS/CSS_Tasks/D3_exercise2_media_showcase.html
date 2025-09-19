@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Exercise 2 – Media Showcase</title>
+  <style>
+    /* =========================
+       STUDENT TODO (CSS ONLY)
+       =========================
+       1) Hero: gradient background + mask vignette; clamp() for heading text.
+       2) Sticky top nav (position: sticky) with proper z-index.
+       3) Responsive images:
+          - <picture> in hero (art direction).
+          - Gallery images: object-fit: cover; use aspect-ratio to avoid CLS.
+          - srcset + sizes for various widths.
+       4) Gallery grid: auto-fit/minmax tiles with consistent gaps.
+       5) Add grayscale filter on tiles; remove on hover/focus with transitions.
+       6) Overlay label via ::after; absolute-positioned within tile.
+       7) Clip-path polygon on one featured tile.
+       8) CSS variables for accent colors and spacing tokens.
+       9) Accessibility: focus-visible outlines; contrast ≥ 4.5:1 for text.
+      10) Motion prefs: @media (prefers-reduced-motion: reduce) to disable transitions.
+    */
+:root {
+  --color-accent: #06b6d4;
+  --spacing-1: 0.5rem;
+  --spacing-2: 1rem;
+  --spacing-3: 2rem;
+}
+
+/* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+
+/* Sticky top navigation */
+.topnav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-2);
+  background-color: #1e293b;
+  z-index: 100;
+}
+
+.topnav__links a {
+  color: #f1f5f9;
+  text-decoration: none;
+  margin-left: var(--spacing-2);
+}
+
+.topnav__links a:focus-visible {
+  outline: 2px solid var(--color-accent);
+}
+
+/* Hero section with gradient + vignette mask */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: var(--spacing-3);
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 60%, rgba(0,0,0,0.5) 100%);
+}
+
+.hero__img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;    /* Reserve space to avoid CLS */
+  object-fit: cover;
+}
+
+.hero__text h1 {
+  font-size: clamp(2rem, 5vw, 3rem);  /* Fluid typography */
+  margin-bottom: var(--spacing-1);
+}
+
+.hero__text p {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* Responsive gallery grid layout */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--spacing-2);
+  padding: var(--spacing-3);
+}
+
+/* Each tile layout */
+.tile {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--spacing-1);
+}
+
+.tile__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4/3;     /* Prevent layout shift */
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.tile__caption::after {
+  content: attr(data-caption);
+  position: absolute;
+  bottom: var(--spacing-1);
+  left: var(--spacing-1);
+  color: #f1f5f9;
+  background-color: rgba(0,0,0,0.6);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--spacing-1);
+  font-size: 0.875rem;
+}
+
+/* Remove grayscale + elevate image on hover/focus */
+.tile:hover .tile__img,
+.tile:focus-within .tile__img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+/* Featured tile uses clip-path polygon shape */
+.tile--featured {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+}
+
+/* Accessibility: visible focus outlines */
+.tile:focus-within {
+  outline: 2px solid var(--color-accent);
+}
+
+/* Motion reduction preferences */
+@media (prefers-reduced-motion: reduce) {
+  .tile__img {
+    transition: none;
+  }
+}
+
+  
+  </style>
+</head>
+<body>
+  <header class="topnav" role="navigation" aria-label="Top Navigation">
+    <a href="#" class="logo">MediaLab</a>
+    <nav class="topnav__links">
+      <a href="#">Home</a>
+      <a href="#">Gallery</a>
+      <a href="#">About</a>
+    </nav>
+  </header>
+
+  <section class="hero" role="region" aria-label="Hero">
+    <div class="hero__media">
+      <picture>
+        <source type="image/avif" srcset="https://picsum.photos/seed/hero/1600/900.avif" media="(min-width: 1024px)">
+        <source type="image/webp" srcset="https://picsum.photos/seed/hero/1200/675.webp"  media="(min-width: 768px)">
+        <img class="hero__img" src="https://picsum.photos/seed/hero/800/600.jpg" alt="Dramatic landscape at sunset">
+      </picture>
+    </div>
+    <div class="hero__text">
+      <h1>Experience Visual Stories</h1>
+      <p>High‑impact imagery, adaptive loading, and accessible motion.</p>
+    </div>
+  </section>
+
+  <main class="gallery" role="main">
+    <figure class="tile">
+      <img src="https://picsum.photos/id/1016/800/600" alt="River valley" class="tile__img">
+      <figcaption class="tile__caption">Valley</figcaption>
+    </figure>
+    <figure class="tile tile--featured">
+      <img src="https://picsum.photos/id/1035/800/600" alt="Forest canopy" class="tile__img">
+      <figcaption class="tile__caption">Canopy</figcaption>
+    </figure>
+    <figure class="tile">
+      <img src="https://picsum.photos/id/1025/800/600" alt="Country road" class="tile__img">
+      <figcaption class="tile__caption">Road</figcaption>
+    </figure>
+    <figure class="tile">
+      <img src="https://picsum.photos/id/1043/800/600" alt="Coastline" class="tile__img">
+      <figcaption class="tile__caption">Coast</figcaption>
+    </figure>
+    <figure class="tile">
+      <img src="https://picsum.photos/id/1039/800/600" alt="Mountain lake" class="tile__img">
+      <figcaption class="tile__caption">Lake</figcaption>
+    </figure>
+  </main>
+</body>
+</html>
+

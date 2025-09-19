@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise 2 — Borders & Backgrounds</title>
+  <!-- TODO: Students — add CSS here (internal <style>) OR link an external CSS file.
+       Requirements for .card:
+       - Rounded corners: 10px radius
+       - Background image: use assets_user_photo.png
+       - White overlay using rgba() on top of the image behind the text
+  -->
+     <style>
+  body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f7f8fc; /* light background */
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      border-radius: 10px;
+      background-image: url("assets_user_photo.png");
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      width: 320px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* shadow */
+    }
+
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 20px; /* more padding */
+    }
+
+    .name {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0 0 5px 0;
+    }
+
+    .role {
+      font-size: 14px;
+      color: gray;
+      margin: 0 0 10px 0;
+    }
+
+    .bio {
+      font-size: 14px;
+      line-height: 1.4;
+      margin: 0;
+    }
+</style>
+
+</head>
+<body>
+  
+
+  <!-- Card container to be styled by students -->
+  <article class="card">
+    <div class="overlay">
+      <h2 class="name">Navya Sree</h2>
+      <p class="role">Frontend Developer</p>
+      <p class="bio">
+        Passionate about styling user interfaces and system designs.Loves Html and CSS.
+      </p>
+    </div>
+  </article>
+
+  <!-- Hint (optional): The overlay can be a child element with a background like rgba(255,255,255,0.85). -->
+</body>
+</html>

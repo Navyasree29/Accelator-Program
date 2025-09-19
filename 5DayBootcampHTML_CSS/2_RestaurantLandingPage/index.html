@@ -1,0 +1,92 @@
+<!--Restaurant Landing Page 
+o Sticky <nav> at the top with links (Home, Menu, About, Reservations). 
+Navigation links must have :hover underline effect. 
+o Hero <section> with a full-width banner <img>; overlay restaurant name 
+(<h1>) and tagline using positioned text. 
+o Three menu highlight cards in a <section> with CSS Grid (3 columns 
+desktop, 1 column mobile). Each card must have an <img>, <h3>, and <p>. 
+o Separate <section> for restaurant hours (use definition list <dl>) and 
+location (text + map placeholder <div> with border). 
+o Prominent “Reserve a Table” button styled with .btn--primary class. On 
+print, hide all images with @media print. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Landing Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <h2 class="logo">FoodieHub</h2>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reservations">Reservations</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <img src="banner.jpg" alt="Restaurant Banner">
+    <div class="hero-text">
+      <h1>Welcome to FoodieHub</h1>
+      <p>Where taste meets tradition</p>
+    </div>
+  </section>
+
+  <!-- Menu Highlights -->
+  <section class="menu-highlights" id="menu">
+    <h2>Our Specials</h2>
+    <div class="menu-grid">
+      <div class="card">
+        <img src="dish1.jpg" alt="Dish 1">
+        <h3>Signature Pasta</h3>
+        <p>Creamy homemade pasta served with fresh herbs.</p>
+      </div>
+      <div class="card">
+        <img src="dish2.jpeg" alt="Dish 2">
+        <h3>Classic Burger</h3>
+        <p>Juicy grilled burger with our secret sauce.</p>
+      </div>
+      <div class="card">
+        <img src="dish3.jpg" alt="Dish 3">
+        <h3>Deluxe Pizza</h3>
+        <p>Wood-fired pizza topped with gourmet ingredients.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hours & Location -->
+  <section class="info" id="about">
+    <h2>Visit Us</h2>
+    <div class="hours-location">
+      <div class="hours">
+        <h3>Hours</h3>
+        <dl>
+          <dt>Monday - Friday:</dt>
+          <dd>11:00 AM - 10:00 PM</dd>
+          <dt>Saturday - Sunday:</dt>
+          <dd>9:00 AM - 11:00 PM</dd>
+        </dl>
+      </div>
+      <div class="location">
+        <h3>Location</h3>
+        <p>123 Food Street, Hyderabad</p>
+        <div class="map-placeholder">[ Map Placeholder ]</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservations -->
+  <section class="reservations" id="reservations">
+    <h2>Reserve Your Table</h2>
+    <a href="#" class="btn--primary">Reserve a Table</a>
+  </section>
+
+</body>
+</html>

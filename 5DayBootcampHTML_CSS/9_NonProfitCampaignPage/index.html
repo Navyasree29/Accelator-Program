@@ -1,0 +1,69 @@
+<!--9. Non-Profit Campaign Page 
+o Hero section with campaign slogan in <h1> and background color. 
+o Impact section: list of stats (e.g., meals served, families helped) 
+implemented with CSS counters inside <ul>. 
+o Donation tier section: 4 cards arranged in Flexbox row. Each card has 
+<h3> tier name, <p> description, and styled price label. 
+o Button “Donate Now” must appear in each card, styled consistently. 
+o Ensure equal spacing (padding and margin) across all cards. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Non-Profit Campaign</title>
+  <!-- Linking external CSS file -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Together, We Can Make a Difference</h1>
+  </section>
+
+  <!-- Impact Section -->
+  <section class="impact">
+    <h2>Our Impact</h2>
+    <ul>
+      <li>10,000 meals served</li>
+      <li>2,500 families helped</li>
+      <li>1,200 children educated</li>
+      <li>800 homes built</li>
+    </ul>
+  </section>
+
+  <!-- Donation Tier Section -->
+  <section class="donation-tiers">
+    <div class="tier-card">
+      <h3>Supporter</h3>
+      <p>Help provide basic resources to families in need.</p>
+      <div class="price">$25</div>
+      <a href="#" class="donate-btn">Donate Now</a>
+    </div>
+
+    <div class="tier-card">
+      <h3>Advocate</h3>
+      <p>Support educational programs for children.</p>
+      <div class="price">$50</div>
+      <a href="#" class="donate-btn">Donate Now</a>
+    </div>
+
+    <div class="tier-card">
+      <h3>Champion</h3>
+      <p>Provide housing support to low-income families.</p>
+      <div class="price">$100</div>
+      <a href="#" class="donate-btn">Donate Now</a>
+    </div>
+
+    <div class="tier-card">
+      <h3>Hero</h3>
+      <p>Fund long-term community development projects.</p>
+      <div class="price">$250</div>
+      <a href="#" class="donate-btn">Donate Now</a>
+    </div>
+  </section>
+
+</body>
+</html>

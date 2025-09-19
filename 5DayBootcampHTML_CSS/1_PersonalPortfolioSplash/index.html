@@ -1,0 +1,59 @@
+<!--Personal Portfolio Splash 
+o Create index.html and styles.css. 
+o Must have <header> with a site logo (can be text in <h1>) aligned left and 
+navigation links (<nav> with an unordered list) aligned right. 
+o Hero section in <main> with two columns: left column has name (<h1>), 
+tagline (<p>), and two <a> buttons styled with .btn; right column has a 
+profile <img>. 
+o Use Flexbox to create two-column layout; on screen widths ≤480px, stack 
+columns vertically. 
+o Buttons must have :hover and :focus states with color changes. Use 
+CSS variables for colors and font sizes. 
+o <footer> at bottom with © text and links to social media. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1 class="logo">MyPortfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Hello, I'm Navya</h1>
+        <p>Aspiring AI & Web Developer</p>
+        <a href="#projects" class="btn">View Projects</a>
+        <a href="#contact" class="btn">Hire Me</a>
+      </div>
+      <div class="hero-right">
+        <img src="profile.png" alt="Profile Picture">
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Navya | Connect with me:
+      <a href="https://www.linkedin.com/in/pandalanavyasree/">LinkedIn</a> | 
+      <a href="https://github.com/Navyasree29">GitHub</a> | 
+    </p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!--Exercise 1: Image Page – Create a page with at least 3 images. Add alt text for each and resize one image.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Page</title>
+</head>
+<body>
+    <h1>My Image Gallery</h1>
+
+    <img src="image1.jpeg" alt="Beautiful Nature">
+    <img src="image2.jpeg" alt="Cute Puppy">
+    <img src="image3.jpeg" alt="City at Night" width="200" height="150"> <!-- Resized -->
+
+</body>
+</html>
+
+<!--Exercise 2: Media Page – Create a page with one audio, one video, and one embedded YouTube video.-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Media Page</title>
+</head>
+<body>
+    <h1>Media Examples</h1>
+
+    <h2>Audio</h2>
+    <audio controls>
+        <source src="audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <h2>Video</h2>
+    <video width="320" height="240" controls>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <h2>YouTube Video</h2>
+    <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+
+</body>
+</html>
+
+<!-- Exercise 3: Student Marks Table – Create a table of 5 students with Name, Roll Number, Marks. Use colspan
+ or rowspan.-->
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks Table</title>
+</head>
+<body>
+    <h1>Student Marks</h1>
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Roll Number</th>
+            <th colspan="2">Marks</th>
+        </tr>
+        <tr>
+            <td>Alice</td>
+            <td>101</td>
+            <td>Math: 85</td>
+            <td>Science: 90</td>
+        </tr>
+        <tr>
+            <td>Bob</td>
+            <td>102</td>
+            <td colspan="2">Total: 160</td> 
+        </tr>
+        <tr>
+            <td rowspan="2">Charlie</td> 
+            <td>103</td>
+            <td>Math: 70</td>
+            <td>Science: 75</td>
+        </tr>
+        <tr>
+            <td>104</td>
+            <td>Math: 68</td>
+            <td>Science: 72</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>105</td>
+            <td>Math: 95</td>
+            <td>Science: 98</td>
+        </tr>
+    </table>
+
+</body>
+</html>

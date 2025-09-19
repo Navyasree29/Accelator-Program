@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Utility Nav */
+.utility-nav {
+  background: #333;
+  padding: 10px;
+}
+.utility-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+}
+.utility-nav li {
+  margin-left: 20px;
+}
+.utility-nav a {
+  color: white;
+  text-decoration: none;
+}
+.utility-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  background: #f5f5f5;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+}
+.breadcrumb ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.breadcrumb li + li::before {
+  content: ">";
+  margin: 0 8px;
+  color: #666;
+}
+.breadcrumb a {
+  text-decoration: none;
+  color: #0077cc;
+}
+
+/* Department Header */
+.dept-header {
+  text-align: center;
+  padding: 40px 20px;
+  background: #eef4ff;
+}
+.dept-header h1 {
+  margin-bottom: 10px;
+}
+
+/* Programs Section */
+.programs {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+.programs h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.programs article {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: white;
+  padding: 40px 20px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.footer-grid h4 {
+  margin-top: 0;
+}
+.footer-grid ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-grid li {
+  margin-bottom: 8px;
+}
+.footer-grid a {
+  color: #ddd;
+  text-decoration: none;
+}
+.footer-grid a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .utility-nav ul {
+    justify-content: center;
+  }
+}

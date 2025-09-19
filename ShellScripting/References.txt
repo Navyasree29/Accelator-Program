@@ -1,0 +1,14 @@
+Shell Scripting Primer
+https://developer.apple.com/library/archive/documentation/OpenSource/Conceptual/ShellScripting/Introduction/Introduction.html
+
+
+An Introduction To Shell Programming
+http://www.faqs.org/docs/air/tsshell.html
+
+
+UNIX Shell Scripting
+https://pages.cs.wisc.edu/~deppeler/tutorials/scripting/
+
+
+The Shell Scripting Tutorial
+https://www.shellscript.sh/

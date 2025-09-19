@@ -1,0 +1,133 @@
+/* Variables */
+:root {
+  --primary-color: #1e3a8a;
+  --secondary-color: #f1f5f9;
+  --text-color: #333;
+  --max-width: 1000px;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  background: #fff;
+}
+
+/* Skip Link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 10px;
+  background: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+/* Header */
+header {
+  background: var(--primary-color);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+header p {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Sections */
+section {
+  padding: 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+section h2 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+/* Agenda */
+.agenda-grid {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 1rem;
+  background: var(--secondary-color);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.time {
+  font-weight: bold;
+}
+
+.session {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5rem;
+}
+
+/* Speakers */
+.speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--secondary-color);
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* Venue */
+.venue address {
+  font-style: normal;
+  margin-bottom: 1rem;
+}
+
+.map-placeholder {
+  height: 200px;
+  border: 2px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fafafa;
+  border-radius: 6px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .agenda-grid {
+    grid-template-columns: 1fr;
+  }
+}

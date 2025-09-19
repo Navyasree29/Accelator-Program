@@ -1,0 +1,195 @@
+/* Variables */
+:root {
+  --primary-color: #b22222;
+  --secondary-color: #f8f1f1;
+  --text-color: #333;
+  --btn-color: #b22222;
+  --btn-hover: #8b1a1a;
+  --max-width: 1100px;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+  position: sticky;
+  top: 0;
+  background: var(--primary-color);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 10;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+}
+
+/* Menu Highlights */
+.menu-highlights {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: var(--secondary-color);
+}
+
+.menu-highlights h2 {
+  margin-bottom: 2rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 1rem;
+}
+
+.card p {
+  margin: 0 1rem 1rem;
+}
+
+/* Hours & Location */
+.info {
+  padding: 3rem 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.hours-location {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.hours, .location {
+  flex: 1;
+}
+
+.map-placeholder {
+  height: 200px;
+  border: 2px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+/* Reservations */
+.reservations {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: var(--secondary-color);
+}
+
+.btn--primary {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: var(--btn-color);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn--primary:hover,
+.btn--primary:focus {
+  background: var(--btn-hover);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+  .hours-location {
+    flex-direction: column;
+  }
+}
+
+/* Print Styles */
+@media print {
+  img, .map-placeholder {
+    display: none;
+  }
+}

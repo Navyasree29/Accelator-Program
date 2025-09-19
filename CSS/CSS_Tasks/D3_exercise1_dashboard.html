@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Exercise 1 – Responsive Analytics Dashboard</title>
+  <style>
+    /* =========================
+       STUDENT TODO (CSS ONLY)
+       =========================
+       1) Define CSS variables in :root for colors, spacing, radius, z-index.
+       2) Implement Grid page template: header, sidebar, content (grid-template-areas).
+       3) Sidebar fixed width on ≥1024px; collapsible behavior at smaller widths.
+       4) Content cards: Flexbox for internal layout; use gap (no inner margins).
+       5) Responsive card grid: auto-fit, minmax(220px, 1fr), 1rem gap.
+       6) clamp() for h1/h2 sizes; rem for spacing; %/vw/vh appropriately.
+       7) Sticky sub-header in content; layered above cards with z-index token.
+       8) Focus-visible styles; prefers-reduced-motion to disable transitions.
+       9) Theme override scope (.theme-dark) tweaking surface/text tokens.
+      10) Ensure no horizontal scroll at 360px; test breakpoints at 768px/1024px.
+    */
+    :root {
+  --color-surface: #ffffff;
+  --color-text: #1a1a1a;
+  --color-accent: #0066ff;
+
+  --spacing-1: 0.5rem;
+  --spacing-2: 1rem;
+  --spacing-3: 2rem;
+
+  --radius: 0.5rem;
+
+  --z-header: 100;
+  --z-subheader: 90;
+  --z-default: 1;
+}
+
+.theme-dark {
+  --color-surface: #1a1a1a;
+  --color-text: #f1f1f1;
+}
+
+/* Global reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Base styles */
+body {
+  font-family: sans-serif;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+/* Grid layout: header, sidebar, content */
+.app {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "sidebar content";
+  grid-template-columns: 240px 1fr;   /* Fixed sidebar width on desktop */
+  min-height: 100vh;
+}
+
+/* Header styling */
+.app__header {
+  grid-area: header;
+  padding: var(--spacing-2);
+  background-color: var(--color-accent);
+  color: #fff;
+  position: sticky;                  /* Fix at top when scrolling */
+  top: 0;
+  z-index: var(--z-header);
+}
+
+.brand {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);  /* Fluid typography */
+}
+
+/* Sidebar fixed on desktop */
+.app__sidebar {
+  grid-area: sidebar;
+  background-color: var(--color-surface);
+  padding: var(--spacing-2);
+  border-right: 1px solid #ddd;
+}
+
+/* Sidebar nav links style */
+.nav__item {
+  display: block;
+  padding: var(--spacing-1);
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: var(--radius);
+}
+
+.nav__item:hover,
+.nav__item:focus {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+/* Content area column layout */
+.app__content {
+  grid-area: content;
+  padding: var(--spacing-2);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sticky subheader to remain visible */
+.subheader {
+  position: sticky;
+  top: 64px;
+  background: var(--color-surface);
+  z-index: var(--z-subheader);
+  padding-bottom: var(--spacing-2);
+  margin-bottom: var(--spacing-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.filters .btn {
+  margin-left: var(--spacing-1);
+}
+
+/* Responsive cards grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));  /* auto-fit responsive grid */
+  gap: 1rem;
+}
+
+/* Card layout using flex */
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  padding: var(--spacing-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-0.25rem);   /* Lift card on hover/focus */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card__actions {
+  margin-top: auto;   /* Push actions to the bottom of the card */
+}
+
+/* Button style */
+.btn {
+  background: var(--color-accent);
+  color: #fff;
+  padding: var(--spacing-1) var(--spacing-2);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+}
+
+/* Reduce motion preference handling */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+}
+
+/* Tablet layout: Sidebar becomes horizontal menu under header */
+@media (max-width: 1023px) {
+  .app {
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "content";
+    grid-template-columns: 1fr;
+  }
+
+  .app__sidebar {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .nav__item {
+    display: inline-block;
+  }
+}
+
+/* Mobile layout: Allow nav items to wrap */
+@media (max-width: 767px) {
+  .app__sidebar {
+    flex-wrap: wrap;
+  }
+}
+
+/* Prevent horizontal overflow at narrowest (360px) */
+@media (max-width: 359px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+  </style>
+</head>
+<body class="theme-default">
+  <div class="app">
+    <header class="app__header" role="banner">
+      <h1 class="brand">Acme Analytics</h1>
+    </header>
+
+    <aside class="app__sidebar" role="navigation" aria-label="Primary">
+      <nav class="nav">
+        <a href="#" class="nav__item">Overview</a>
+        <a href="#" class="nav__item">Reports</a>
+        <a href="#" class="nav__item">Teams</a>
+        <a href="#" class="nav__item">Settings</a>
+      </nav>
+    </aside>
+
+    <main class="app__content" role="main">
+      <div class="subheader" role="region" aria-label="Subheader">
+        <h2 class="subheader__title">KPI Overview</h2>
+        <div class="filters">
+          <button class="btn">Today</button>
+          <button class="btn">7d</button>
+          <button class="btn">30d</button>
+        </div>
+      </div>
+
+      <section class="cards">
+        <article class="card">
+          <h3 class="card__title">Revenue</h3>
+          <div class="card__meta">vs last week</div>
+          <div class="card__body">[chart placeholder]</div>
+          <div class="card__actions">
+            <button class="btn">Details</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="card__title">Active Users</h3>
+          <div class="card__meta">last 24h</div>
+          <div class="card__body">[chart placeholder]</div>
+          <div class="card__actions">
+            <button class="btn">Details</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="card__title">Conversion</h3>
+          <div class="card__meta">month to date</div>
+          <div class="card__body">[chart placeholder]</div>
+          <div class="card__actions">
+            <button class="btn">Details</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3 class="card__title">NPS</h3>
+          <div class="card__meta">quarter</div>
+          <div class="card__body">[chart placeholder]</div>
+          <div class="card__actions">
+            <button class="btn">Details</button>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
