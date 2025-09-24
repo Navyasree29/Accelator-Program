@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course Registration Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <form>
+    <fieldset>
+      <legend>Course Registration</legend>
+
+      <!-- Full Name -->
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" required aria-describedby="name-help">
+      <small id="name-help">Enter your full legal name.</small>
+
+      <!-- Email -->
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required aria-describedby="email-help">
+      <small id="email-help">We’ll send confirmation to this email.</small>
+
+      <!-- Phone Number -->
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required aria-describedby="phone-help">
+      <small id="phone-help">Include country code (e.g., +91).</small>
+
+      <!-- Course Selection -->
+      <label for="course">Select Course</label>
+      <select id="course" name="course" required aria-describedby="course-help">
+        <option value="">--Choose a course--</option>
+        <option value="web">Web Development</option>
+        <option value="ml">Machine Learning</option>
+        <option value="cloud">Cloud Computing</option>
+      </select>
+      <small id="course-help">Pick one course from the list.</small>
+
+      <!-- Submit Button -->
+      <button type="submit">Register</button>
+    </fieldset>
+  </form>
+</body>
+</html>

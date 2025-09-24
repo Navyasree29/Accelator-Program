@@ -1,0 +1,54 @@
+/* Basic form styling */
+form {
+  max-width: 400px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 5px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+}
+
+input, select, button {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+/* Help text */
+small {
+  display: block;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Required field validation */
+input:invalid, select:invalid {
+  border: 2px solid red;
+}
+
+/* Submit button styling */
+button {
+  margin-top: 20px;
+  background: #0066cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #004999;
+}

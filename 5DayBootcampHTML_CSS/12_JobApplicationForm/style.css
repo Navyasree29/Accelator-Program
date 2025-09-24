@@ -1,0 +1,108 @@
+/* General form styling */
+form {
+  max-width: 500px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+fieldset {
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 5px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+/* Custom radio buttons */
+input[type="radio"],
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #555;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+  position: relative;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0066cc;
+}
+
+/* Custom checkboxes */
+input[type="checkbox"] {
+  border-radius: 4px;
+}
+
+input[type="checkbox"]:checked::before {
+  content: "✔";
+  position: absolute;
+  top: -2px;
+  left: 2px;
+  font-size: 14px;
+  color: #0066cc;
+}
+
+/* Focus ring visible */
+input[type="radio"]:focus,
+input[type="checkbox"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="file"]:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* Disabled submit */
+button[disabled] {
+  background: #ccc;
+  color: #666;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: not-allowed;
+}
+
+/* Active submit button (when enabled manually) */
+button {
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+button:hover:enabled {
+  background: #004999;
+}
