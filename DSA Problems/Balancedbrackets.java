@@ -1,3 +1,17 @@
+/*Q2. Given a string of parentheses ()[]{}, check whether it is balanced. 
+A string is balanced if every opening bracket has a matching closing bracket in the correct 
+order. 
+Input Example: 
+({[]}) 
+Output Example: 
+Balanced 
+Hint for Students: 
+�
+� Use a Stack to push opening brackets. 
+�
+� When a closing bracket comes, check top of stack for its matching pair. 
+�
+� If mismatch or stack not empty at end → Not Balanced. */
 import java.util.*;
 
 public class Balancedbrackets {

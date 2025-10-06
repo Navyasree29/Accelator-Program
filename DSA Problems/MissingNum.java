@@ -1,3 +1,17 @@
+/*Q3. You are given an array of size n-1 containing distinct numbers from 1 to n. 
+Find the missing number in the sequence. 
+Input Example: 
+arr = [1, 2, 4, 5] 
+n = 5 
+Output Example: 
+3 
+Hint for Students: 
+�
+� Use formula: 
+[ 
+\text{Expected Sum} = \frac{n(n+1)}{2} 
+] 
+Subtract the actual sum from expected sum. */
 import java.util.*;
 
 public class MissingNum {

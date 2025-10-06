@@ -1,3 +1,24 @@
+/*Q1.Implement a Queue data structure using an array. 
+Support the operations: 
+ enqueue(x) – insert an element 
+ dequeue() – remove an element 
+ display() – print queue elements 
+Input Example: 
+enqueue 1 
+enqueue 2 
+dequeue 
+enqueue 3 
+display 
+Output Example: 
+Dequeued: 1 
+Queue: 2 3 
+Hint for Students: 
+�
+� Maintain two indices: front and rear. 
+�
+� Wrap around when using a circular array. 
+�
+� Increment front when dequeuing, increment rear when enqueuing. */
 class Queue {
     int[] arr = new int[10];
     int front = 0, rear = -1, size = 0;
