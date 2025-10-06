@@ -34,4 +34,5 @@ public class palindrome {
             System.out.println("Not a Palindrome");
         }
     }
+    
 }
